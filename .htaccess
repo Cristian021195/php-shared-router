@@ -1,0 +1,16 @@
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW UPGRADE_INSECURE_REQUESTS:distribuidora-compromiso.xyz
+Header always set Content-Security-Policy: upgrade-insecure-requests
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW UPGRADE_INSECURE_REQUESTS:distribuidora-compromiso.xyz
+
+Options +SymLinksIfOwnerMatch 
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . / [L] for self hosted / only one project in root folder case XAMMP many projects
+RewriteRule . / [L]
+#  SetEnv ID Europe/Amsterdam America/Argentina/Tucuman
+php_value date.timezone 'America/Argentina/Tucuman'
+
+#para correr este proyecto asegurar primero que XAMMP / WAMP no este ocupando el puerto 80
+# correr el comando php -S 0.0.0.0:80 para todos los dispositivos de la red
+# correr el comando php -S localhost:80 o 127.0 0.1 para solo nuestra pc
